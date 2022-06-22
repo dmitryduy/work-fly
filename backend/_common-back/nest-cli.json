@@ -1,0 +1,75 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/app/src",
+  "monorepo": true,
+  "root": "apps/app",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/app/tsconfig.app.json"
+  },
+  "projects": {
+    "app": {
+      "type": "application",
+      "root": "apps/app",
+      "entryFile": "main",
+      "sourceRoot": "apps/app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/app/tsconfig.app.json"
+      }
+    },
+    "nest-amqp": {
+      "type": "library",
+      "root": "libs/nest-amqp",
+      "entryFile": "index",
+      "sourceRoot": "libs/nest-amqp/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nest-amqp/tsconfig.lib.json"
+      }
+    },
+    "logger": {
+      "type": "library",
+      "root": "libs/logger",
+      "entryFile": "index",
+      "sourceRoot": "libs/logger/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/logger/tsconfig.lib.json"
+      }
+    },
+    "nest-pg": {
+      "type": "library",
+      "root": "libs/nest-pg",
+      "entryFile": "index",
+      "sourceRoot": "libs/nest-pg/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nest-pg/tsconfig.lib.json"
+      }
+    },
+    "configs": {
+      "type": "library",
+      "root": "libs/configs",
+      "entryFile": "index",
+      "sourceRoot": "libs/configs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/configs/tsconfig.lib.json"
+      }
+    },
+    "interceptors": {
+      "type": "library",
+      "root": "libs/interceptors",
+      "entryFile": "index",
+      "sourceRoot": "libs/interceptors/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/interceptors/tsconfig.lib.json"
+      }
+    },
+    "dto": {
+      "type": "library",
+      "root": "libs/dto",
+      "entryFile": "index",
+      "sourceRoot": "libs/dto/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/dto/tsconfig.lib.json"
+      }
+    }
+  }
+}
