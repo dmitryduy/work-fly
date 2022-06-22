@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Структура приложения
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Общая структура
+![Structure](./screenshots/structure-1.png)
 
-## Available Scripts
+## Папка app
+![Structure app](./screenshots/structure-2.png)
+### В папке app у нас лежит файл App.tsx который переименован в index.tsx
+### В папке config у нас лежат все конфигурационные файлы (настройки тем и т.д (theme.ts))
+### В папке providers у нас лежат все провайдеры и один общий провайдер который "объединяет" все провайдеры через compose (P.S. для compose нужно будет сделать наверное module declare в declaration.d.ts)
+#### Провайдер - это HOC. Принимает компонент и возвращает другой - обёрнутый в Provider
+##### Например:
+```tsx
+export const routerProvider = (Component: React.FC) => () => {
+  return (
+    <BrowserRouter>
+      <Component />
+    </BrowserRouter>
+  )
+}
+```
+### В папке store у нас хранилище приложения (RTK) а в папке reducers все редьюсеры (slice'ы). Возможно что то будет ещё добавляться
 
-In the project directory, you can run:
 
-### `npm start`
+## Папка components (возможно тоже будет что-то добавляться)
+![Structure components](./screenshots/structure-3.png)
+### Для каждого компонента у нас будет создаваться папка с его названием (Я же просто написал Component)
+### В shared будут находится все переиспользуемые компоненты (компоненты для UI.. кнопки, инпуты, т.д)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Папка routes
+### В ней будут находится все роуты приложения (приватные, не приватные...)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Папка styles
+### Там все общие стили, именно css.. не знаю.. надо - не надо
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Папка test
+### В папке будут расположены все тесты
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Папка utils
+### Просто папка для утилит
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Папка hooks
+### По названию, думаю, всё понятно... Там должны лежать все хуки
