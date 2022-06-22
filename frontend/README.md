@@ -1,48 +1,74 @@
-# Структура приложения
+## Перед началом
 
-## Общая структура
-![Structure](./screenshots/structure-1.png)
-
-## Папка app
-![Structure app](./screenshots/structure-2.png)
-### В папке app у нас лежит файл App.tsx который переименован в index.tsx
-### В папке config у нас лежат все конфигурационные файлы (настройки тем и т.д (theme.ts))
-### В папке providers у нас лежат все провайдеры и один общий провайдер который "объединяет" все провайдеры через compose (P.S. для compose нужно будет сделать наверное module declare в declaration.d.ts)
-#### Провайдер - это HOC. Принимает компонент и возвращает другой - обёрнутый в Provider
-##### Например:
-```tsx
-export const routerProvider = (Component: React.FC) => () => {
-  return (
-    <BrowserRouter>
-      <Component />
-    </BrowserRouter>
-  )
-}
 ```
-### В папке store у нас хранилище приложения (RTK) а в папке reducers все редьюсеры (slice'ы). Возможно что то будет ещё добавляться
+git remote add upstream https://github.com/dmitryduy/work-fly.git
+git checkout master
+git pull upstream master
+git checkout название_вашей_ветки
+npm i
+```
 
 
-## Папка components (возможно тоже будет что-то добавляться)
-![Structure components](./screenshots/structure-3.png)
-### Для каждого компонента у нас будет создаваться папка с его названием (Я же просто написал Component)
-### В shared будут находится все переиспользуемые компоненты (компоненты для UI.. кнопки, инпуты, т.д)
 
+## Структура проекта
+* Каждая компонента должна иметь свою папку
+* Весь набор технологий (README, tsx, styled-components, unit-тесты и т.д.) реализуется в той же папке компоненты, в которой она находится.
+```
+├── components/                  — Реакт компоненты
+|   ├── Component/               — Компонента
+    |   ├── Component.constants/ — Константы для компоненты
+    |   |    ├── index.ts        
+    |   ├── Component.i18n/      —  Переводы
+    |   |    ├── ru.ts           
+    |   |    ├── en.ts           
+    |   |    └── ...
+    |   ├── Component.hooks/     — Хуки для компоненты
+    |   |    ├── useUpdate.ts    
+    |   |    └── ...
+    |   ├── Component.styles/    — Стили
+    |   |    ├── index.ts        
+    |   ├── Component.tests/     — unit-тесты для компоненты
+    |   |    ├── index.ts        
+    |   ├── Component.typings/   — Интерфейсами для компоненты
+    |   |    ├── index.ts        
+    |   ├── Component.utils/     — Хелперы для компоненты
+    |   |    ├── firstUtil.ts    
+    |   |    └── ...
+    |   ├── Component.tsx        — Компонента
+    |   ├── Component.md         — README для компоненты
+├── hooks/                       — Глобальные хуками
+├── ui/                          — Переиспользуемые компоненты
+|   ├── Component/               — Реакт компонента
+    |   |    └── ...             — Вся структура как для обычной компоненты
+├── routes/                      — Роуты приложения
+├── pages/                       — Страницы приложения
+|   ├── LoginPage.tsx            
+|   └── ...
+├── store/                       — Стор редакса
+|   ├── index.ts                 — Файл стора
+    ├── slices/                  — Слайсы
+    |   ├── slice/               
+    |   |   ├── slice.ts         
+    |   |   ├── slice.typings.ts — Интерфейсы для слайса
+    |   └── ...  
+|   ├── rootSlice.ts             — Рутовый слайс
+├── utils/                       — Глобальные утилиты
+|   ├── firstUtil.ts             
+|   └── ...        
+├── providers/                   — Провайдеры
+|   ├── ThemeProvider.tsx        
+|   └── ...        
+├── docs/                        — Документация
+|   ├── docs.md               
+|   └── ...  
+├── declare/                     — Декларацаии интерфейсов
+|   ├── react.d.ts               
+|   └── ...      
+├── styles/                      — Глобальные css стили
+|   ├── style.css               
+|   └── ...
+```
 
-## Папка routes
-### В ней будут находится все роуты приложения (приватные, не приватные...)
-
-
-## Папка styles
-### Там все общие стили, именно css.. не знаю.. надо - не надо
-
-
-## Папка test
-### В папке будут расположены все тесты
-
-
-## Папка utils
-### Просто папка для утилит
-
-
-## Папка hooks
-### По названию, думаю, всё понятно... Там должны лежать все хуки
+## Документация
+### Утилиты
+* [Переводы](https://github.com/dmitryduy/work-fly/tree/master/frontend/src/docs/i18n.md)
