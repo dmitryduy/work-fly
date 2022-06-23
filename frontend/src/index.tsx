@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.css';
 import App from './app';
+import { Compose } from './app/providers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <App/>
+  <Compose components={[]}>
+    <App/>
+  </Compose>
 );
 
