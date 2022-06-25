@@ -39,13 +39,12 @@ export class PgClient extends Pool {
         await this.end();
     }
 
-    async executeQuery<T>(queryText: string, values: any[] = []): Promise<T[]> {
+    async executeQuery<T>(queryText: string, values: unknown[] = []): Promise<T[]> {
         this._logger.verbose(`Executing query: ${queryText} (${values})`);
         const result = await this.query<T>(queryText, values);
         this._logger.verbose(`Executed query, result size ${result.rows.length}`);
         return result.rows;
     }
-
 }
 
 export const PG_CONNECTOR_FACTORY = (configIdent: string) => ({

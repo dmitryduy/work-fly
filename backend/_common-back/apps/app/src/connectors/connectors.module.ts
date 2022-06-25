@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { _amqpConfig, _pgConfig } from '@app/configs';
 import { AMQP_CONNECTION_SERVICE_FACTORY } from '@app/nest-amqp';
 import { PG_CONNECTOR_FACTORY, PgClient } from '@app/nest-pg';
-import { AmqpConnection, RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
+import { AmqpConnection, RabbitMQModule, RabbitRpcParamsFactory } from '@golevelup/nestjs-rabbitmq';
 import { LoggerModule } from '@app/logger';
 import { AMQP_MAIN, PG_MAIN } from '@app/configs/constants';
 
@@ -23,8 +23,9 @@ import { AMQP_MAIN, PG_MAIN } from '@app/configs/constants';
     providers: [
         AMQP_CONNECTION_SERVICE_FACTORY(AMQP_MAIN),
         PG_CONNECTOR_FACTORY(PG_MAIN),
+        RabbitRpcParamsFactory,
     ],
-    exports: [AmqpConnection, PgClient],
+    exports: [AmqpConnection, RabbitRpcParamsFactory, PgClient],
 })
 export class ConnectorsModule implements BeforeApplicationShutdown {
     constructor(private pg: PgClient) {}

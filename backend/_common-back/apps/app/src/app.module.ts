@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from './controllers/app.controller';
 import { ConnectorsModule } from './connectors/connectors.module';
+import { AppService } from './services/app.service';
 
 @Module({
     imports: [ConnectorsModule],
