@@ -125,10 +125,6 @@
     "no-whitespace-before-property": [
       "error"
     ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
     "operator-assignment": [
       "error",
       "always"
@@ -207,10 +203,6 @@
       }
     ],
     "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
-    "arrow-body-style": [
       "error",
       "as-needed"
     ],

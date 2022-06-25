@@ -59,3 +59,5 @@
 ```
 
 ## Документация
+### Утилиты
+* [Переводы](https://github.com/dmitryduy/work-fly/tree/master/frontend/src/docs/i18n.md)
