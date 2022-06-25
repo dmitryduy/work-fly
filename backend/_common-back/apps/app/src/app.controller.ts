@@ -1,14 +1,14 @@
 import { Controller, Get, UseInterceptors } from '@nestjs/common';
-import { SrvService } from './srv.service';
+import { AppService } from './app.service';
 import { RequestLogInterceptor } from '@app/interceptors';
 
 @Controller()
 @UseInterceptors(RequestLogInterceptor)
-export class SrvController {
-    constructor(private readonly srvService: SrvService) {}
+export class AppController {
+    constructor(private readonly appService: AppService) {}
 
     @Get()
     getHello(): string {
-        return this.srvService.getHello();
+        return this.appService.getHello();
     }
 }

@@ -21,8 +21,8 @@ import { AMQP_MAIN, PG_MAIN } from '@app/configs/constants';
         LoggerModule.register(),
     ],
     providers: [
-        AMQP_CONNECTION_SERVICE_FACTORY('AMQP_MAIN'),
-        PG_CONNECTOR_FACTORY('PG_MAIN'),
+        AMQP_CONNECTION_SERVICE_FACTORY(AMQP_MAIN),
+        PG_CONNECTOR_FACTORY(PG_MAIN),
     ],
     exports: [AmqpConnection, PgClient],
 })
