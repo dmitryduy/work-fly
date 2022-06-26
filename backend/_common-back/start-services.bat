@@ -1,4 +1,4 @@
-cd ./postgres
+cd ./developer.env/postgres/
 docker-compose down
 cd ../
 cd ./rabbitmq
