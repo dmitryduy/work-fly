@@ -17,7 +17,7 @@ export class LoggerModule {
                             level: process.env.APP_LOGGER_DEBUG === 'on' ? 'debug' : 'info',
                         }),
                         new winston.transports.File({
-                            dirname: process.env.LOG_DIR || '/var/log/apps/common-back/',
+                            dirname: process.env.LOG_DIR || 'logs/apps/common-back/',
                             filename: 'common-back.log',
                             format: winston.format.combine(winston.format.timestamp(), customLogFieldsFormat, winston.format.logstash()),
                             level: 'debug',
