@@ -61,7 +61,7 @@ export const PG_CONNECTOR_FACTORY = (configIdent: string) => ({
         });
         const dbURL = new URL(process.env.DATABASE_URL);
         Logger.verbose(`PG Connected at ${dbURL.host}${dbURL.pathname}`, 'PG_CONNECTOR factory');
-        return connect ? connect : null;
+        return connect || null;
     },
     inject: [ConfigService],
 });
