@@ -5,7 +5,6 @@ const transformFunction = format((info) => {
     return {
         ...info,
         service: 'common-back',
-        type: info.type ?? 'internal',
     };
 });
 
