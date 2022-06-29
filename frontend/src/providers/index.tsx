@@ -1,16 +1,18 @@
 import React from "react";
 
 interface IComposeProviderProps {
-  components: Array<[React.JSXElementConstructor<React.PropsWithChildren<any>>, {}]>
-  children?: React.ReactNode
-};
+  providers: Array<
+    [React.JSXElementConstructor<React.PropsWithChildren<any>>, object?]
+  >;
+  children: React.ReactNode;
+}
 
-const ComposeProvider = ({ children, components }: IComposeProviderProps) => {
-  const composedProvider = components.reduceRight((acc, [ Provider, props ]) => (
-    <Provider {...props}>{acc}</Provider>
-  ), children);
+export function ComposeProvider(props: IComposeProviderProps) {
+  const { children, providers } = props;
+  const composed = providers.reduceRight(
+    (acc, [Provider, props]) => <Provider {...props}>{acc}</Provider>,
+    children
+  );
 
-  return composedProvider;
-};
-
-export default ComposeProvider;
+  return <>{composed}</>;
+}

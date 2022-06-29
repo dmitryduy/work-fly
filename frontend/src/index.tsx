@@ -1,24 +1,15 @@
-import ReactDOM from 'react-dom/client';
-<<<<<<< HEAD
-import './styles/index.css';
-import App from './app';
-=======
+import ReactDOM from "react-dom/client";
 
-import App from './App';
-import StyleProvider from './providers/StyleProvider';
->>>>>>> c92fb7d4011221ca54a9daa9aed600750f61faa5
+import App from "./App";
+import { ComposeProvider } from "./providers";
+import StyleProvider from "./providers/StyleProvider";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
-<<<<<<< HEAD
-  <App/>
-);
-=======
-  <StyleProvider>
+  <ComposeProvider providers={[[StyleProvider]]}>
     <App />
-  </StyleProvider>
+  </ComposeProvider>
 );
->>>>>>> c92fb7d4011221ca54a9daa9aed600750f61faa5
