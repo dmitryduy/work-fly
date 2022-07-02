@@ -1,10 +1,14 @@
-import { FC } from "react";
-import { ThemeProvider } from "styled-components";
+import { FC, ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle } from "../styles/globalStyle";
-import { theme } from "../styles/theme";
+import GlobalStyle from '../styles/globalStyle';
+import theme from '../styles/theme';
 
-const StyleProvider: FC = ({ children }) => {
+interface Props {
+  children: ReactNode;
+}
+
+const StyleProvider: FC<Props> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
