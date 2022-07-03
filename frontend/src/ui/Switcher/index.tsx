@@ -3,7 +3,7 @@ import { FC } from "react";
 import { SwitcherStyled } from "./Switcher.styles";
 import { ISwitcherProps } from "./Switcher.typings";
 
-const Switcher: FC<ISwitcherProps> = ({ color, isToggle, setToggle }) => {
+export const Switcher: FC<ISwitcherProps> = ({ color, isToggle, setToggle }) => {
   return (
     <SwitcherStyled
       isToggle={isToggle}
@@ -12,5 +12,3 @@ const Switcher: FC<ISwitcherProps> = ({ color, isToggle, setToggle }) => {
     />
   );
 };
-
-export default Switcher;

@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-
+  
   body {
-    font-family: ${({ theme }) => theme.defaultFontFamily} sans-serif;
-    font-size: ${({ theme }) => theme.defaultFontSize};
+    font-family: ${({ theme }) => theme.global.defaultFontFamily} sans-serif;
+    font-size: ${({ theme }) => theme.global.defaultFontSize};
   }
 `;
