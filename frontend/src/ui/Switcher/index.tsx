@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { SwitcherStyled } from "./Switcher.styles";
-import { ISwitcherProps } from "./Switcher.typings";
+import { SwitcherStyled } from './Switcher.styles';
+import { ISwitcherProps } from './Switcher.typings';
 
 export const Switcher: FC<ISwitcherProps> = ({ color, isToggle, setToggle }) => {
   return (

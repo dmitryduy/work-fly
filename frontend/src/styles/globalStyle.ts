@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -12,3 +12,5 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.global.defaultFontSize};
   }
 `;
+
+export default GlobalStyle;

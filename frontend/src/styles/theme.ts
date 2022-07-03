@@ -127,7 +127,6 @@ const global = {
   defaultFontFamily: 'Inter',
 };
 
-
 export interface ITheme {
   global: typeof global;
   colors: typeof colors;
@@ -136,10 +135,12 @@ export interface ITheme {
   transition: typeof transition;
 }
 
-export const theme:ITheme = {
+const theme: ITheme = {
   global,
   colors,
   typography,
   radius,
   transition
 };
+
+export default theme;
