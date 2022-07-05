@@ -2,6 +2,7 @@
 
 ```bash
 $ yarn install
+$ docker-compose up db
 ```
 
 ## Running the app
@@ -10,3 +11,7 @@ $ yarn install
 # development
 $ yarn dev
 ```
+
+## Documentation
+
+<http://localhost:5000/docs>
