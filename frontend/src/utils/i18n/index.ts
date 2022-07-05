@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from "./i18n.contants";
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from './i18n.contants';
 
 const _i18n = keyset => {
   return (word: string) => {
