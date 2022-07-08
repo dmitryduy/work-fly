@@ -34,7 +34,7 @@
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": [
-      "error",
+      "warn",
       { "vars": "all"}
     ],
     "semi": ["error", "always"],
