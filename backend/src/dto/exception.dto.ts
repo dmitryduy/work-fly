@@ -8,7 +8,7 @@ export class ExceptionDto {
   statusCode: string;
 
   @ApiProperty({
-    example: 'Неверный логин или пароль',
+    example: 'Ошибка ...',
     description: 'Описание ошибки в теле ответа',
   })
   message: string;

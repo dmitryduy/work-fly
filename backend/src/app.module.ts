@@ -6,8 +6,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { getMailConfig } from './configs/mail.config';
 import { RegistrationModule } from './registration/registration.module';
-import { Verification } from './entities/Verification';
-import { Users } from './entities/Users';
 
 @Module({
   imports: [
@@ -19,7 +17,7 @@ import { Users } from './entities/Users';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Verification, Users],
+      entities: [__dirname + '/entities/*.*'],
       synchronize: true,
     }),
     MailerModule.forRootAsync({
