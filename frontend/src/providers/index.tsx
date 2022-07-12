@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import { FC, JSXElementConstructor, PropsWithChildren, ReactNode } from 'react';
 
 interface Props {
-  providers: Array<
-    [React.JSXElementConstructor<React.PropsWithChildren<any>>, object?]
-  >;
-  children: React.ReactNode;
+  providers: Array<[ JSXElementConstructor<PropsWithChildren>, object? ]>;
+  children: ReactNode;
 }
 
-export const ComposeProvider: FC<Props> = ({ children, providers }) => {
+const ComposeProvider: FC<Props> = ({ children, providers }) => {
   const composed = providers.reduceRight(
-    (acc, [Provider, props]) => <Provider {...props}>{acc}</Provider>,
+    (acc, [ Provider, props ]) => <Provider {...props}>{acc}</Provider>,
     children
   );
 
   return <>{composed}</>;
 };
+
+export default ComposeProvider;
