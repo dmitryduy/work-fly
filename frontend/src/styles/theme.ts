@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { css } from 'styled-components';
 
 const colors = {
@@ -145,17 +144,3 @@ const theme: ITheme = {
 };
 
 export default theme;
-=======
-import { DefaultTheme } from "styled-components";
-
-export const theme: DefaultTheme = {
-  defaultFontSize: "15px",
-  defaultFontFamily: "Inter",
-  colors: {
-    primaryColor: "#030235",
-    bgColor: "#FAFAFB",
-    sidebarColor: "#080721",
-    whiteColor: "#fff",
-  },
-};
->>>>>>> db8845f... feat: add theme, theme provider, global style
