@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  
+
   body {
     font-family: ${({ theme }) => theme.global.defaultFontFamily} sans-serif;
     font-size: ${({ theme }) => theme.global.defaultFontSize};
